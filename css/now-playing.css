@@ -1,0 +1,23 @@
+/* No CSS reset, not really worth it for so few elements/styles */
+
+/** Body + typography */
+
+
+
+
+/** Artist + Track */
+
+#artist,#track {
+    display: inline-block;
+    margin: .25em 0;
+    padding: .2em .4em;
+    border-radius: 2px;
+
+}
+
+#track {
+}
+
+h1 .separator {
+    display: none;
+}
