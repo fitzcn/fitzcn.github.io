@@ -103,7 +103,7 @@
             </div>
             <div class="content">
                 <section id="about">
-                <h2 class="content-subhead" id="about">About me</h2>
+                <h2 class="content-subhead">About me</h2>
                     <p>
                         I am delighted to be in my third year of Northwestern University’s PhD program in Technology and Social Behavior. A unique combination of computer science and communication studies, the faculty that I work with live at the intersection of research and design. I am currently developing my skills as both a designer and a developer, focusing on mixed methods approaches to studying social media.</p>
                     <p>
@@ -245,7 +245,7 @@
             var theID = aArray[i];
             var divPos = $(theID).offset().top; // get the offset of the div from the top of page
             var divHeight = $(theID).height(); // get the height of the div in question
-            if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
+            if (windowPos >= (divPos-1) && windowPos < (divPos + divHeight + 49)) {
                 $("a[href='" + theID + "']").addClass("pure-menu-selected");
             } else {
                 $("a[href='" + theID + "']").removeClass("pure-menu-selected");
