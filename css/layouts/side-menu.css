@@ -25,6 +25,17 @@ body {
     height: auto;
 }
 
+li.cv{
+    list-style-type: none;
+}
+
+.hanging-indent{
+    padding-left: 2em;
+    text-indent: -1em;
+}
+
+
+
 /*
 Add transition to containers so they can push in and out.
 */
