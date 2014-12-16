@@ -34,15 +34,15 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
   var cardTypes = [{
     title: 'Would you want to work with this person?',
     image: 'http://distilleryimage8.ak.instagram.com/e17837faafb611e3b8a7126a0592d374_8.jpg',
-    map: 'https://a.tiles.mapbox.com/v4/fitzcn.kgbb5fog/attribution,zoompan,zoomwheel.html?access_token=pk.eyJ1IjoiZml0emNuIiwiYSI6InVTV1luQ0UifQ.xvYrvgBMkKkM-QYJtTyxuw'
+    map: 'https://a.tiles.mapbox.com/v4/fitzcn.kgbb5fog/zoompan,zoomwheel.html?access_token=pk.eyJ1IjoiZml0emNuIiwiYSI6InVTV1luQ0UifQ.xvYrvgBMkKkM-QYJtTyxuw'
   }, {
     title: 'Would you be friends with this person?',
     image: 'http://distilleryimage10.ak.instagram.com/d7373e60a22a11e3a110123da7743db2_8.jpg',
-    map: 'https://a.tiles.mapbox.com/v4/fitzcn.kgbb5fog/attribution,zoompan,zoomwheel.html?access_token=pk.eyJ1IjoiZml0emNuIiwiYSI6InVTV1luQ0UifQ.xvYrvgBMkKkM-QYJtTyxuw'
+    map: 'https://a.tiles.mapbox.com/v4/fitzcn.kgbb5fog/zoompan,zoomwheel.html?access_token=pk.eyJ1IjoiZml0emNuIiwiYSI6InVTV1luQ0UifQ.xvYrvgBMkKkM-QYJtTyxuw'
   }, {
     title: 'Would you go on a date with this person?',
     image: 'http://photos-d.ak.instagram.com/hphotos-ak-xfa1/917045_730403106982531_1038497188_n.jpg',
-    map: 'https://a.tiles.mapbox.com/v4/fitzcn.kgbb5fog/attribution,zoompan,zoomwheel.html?access_token=pk.eyJ1IjoiZml0emNuIiwiYSI6InVTV1luQ0UifQ.xvYrvgBMkKkM-QYJtTyxuw'
+    map: 'https://a.tiles.mapbox.com/v4/fitzcn.kgbb5fog/zoompan,zoomwheel.html?access_token=pk.eyJ1IjoiZml0emNuIiwiYSI6InVTV1luQ0UifQ.xvYrvgBMkKkM-QYJtTyxuw'
   }];
 
 

@@ -6,7 +6,7 @@ td-cards {
 td-card {
   position: absolute;
   left: 50%;
-  margin-top: 80px;
+  margin-top: 40px;
   margin-bottom: 40px;
   margin-left: -125px;
   width: 250px;
@@ -39,7 +39,7 @@ td-card .image {
   position: relative;
 }
 
-td-card .title {
+td-card .title, .button-bar {
   background-color: white;
 }
 
