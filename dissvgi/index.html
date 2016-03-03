@@ -1,6 +1,4 @@
 <!doctype html>
-<!-- special thanks to Singleton for lastfm script,https://github.com/dsingleton/now-playing-radiator-->
-<!-- special thanks to Mayes for twitter script, http://www.jasonmayes.com/projects/twitterApi/ -->
 
 <head>
 
@@ -12,9 +10,6 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Colin Fitzpatrick</title>
 
-    <!--<script src="js/lastfm.js"></script>-->
-    <!--<script src="js/now-playing.js"></script>-->
-    <!--<script src="js/tweet.js"></script>-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
    
@@ -89,6 +84,9 @@
     version    : 'v2.2' // use version 2.2
   });
 
+
+
+
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
@@ -120,10 +118,13 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
+    FB.api('/me/tagged_places', function(response) {
       console.log('Successful login for: ' + response.name);
+      console.log(response)
+      console.log(Object.prototype.toString.call(response));
+      console.log(response.data);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Thanks for logging in, ' + response.data[0].place.name + '!';
     });
   }
 </script>
@@ -134,7 +135,7 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+<fb:login-button scope="public_profile,user_tagged_places" onlogin="checkLoginState();">
 </fb:login-button>
 
 <div id="status">
