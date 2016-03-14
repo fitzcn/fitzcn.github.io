@@ -86,14 +86,22 @@ print("Hello world")
                     </ul>
                 </div>
                 <div class=bs-docs-section>
-                    <h1 id=type class=page-header>Sorting without Code</h1>
+                    <h1 id=codefree class=page-header>Sorting without Code</h1>
                     <p class=lead>Now that we have a working sense of what an algorithm is and what it does, we are going to work through three activities that require us to make our own algorithms. The goal for each of the activities is to create a sorted line of everyone based on some type of information. Sorting algorithms are good for working through understanding algorithms given that they can provide a range of complexity and demostrate lots of considerations of algorithm design in a tangible manner.</p>
                     <h2 id=codefree-name>By name</h2>
+                    <p>On one of the index cards that you have, write down your name. Stand up and bring your card to the front of the classroom; if other students are already there, simply stand before or after them where there is room to form a line. Once everyone is line, sort yourselves while making mental notes about the steps you take to do so.</p>
+                    <p>Once everyone is sorted, you will be asked to return to your seats. Working with a partner, record the steps to the Name Sort algorithm you made as a class.</p>
                     <h2 id=codefree-birthday>By birthday</h2>
+                    <p>On the second index card, write down your birthday. As before, afterwards stand up and take the card with you to the front of the room; if other students are already there, stand before or after them where there is room. Once everyone is in line, sort yourselves again. You may not use the same steps you used for the Name Sort.</p>
+                    <p>Once everyone is sorted, return to your seats. Again, working with a partner, record the steps to Birthday Sort.</p>
                     <h2 id=codefree-color>By color of shirt</h2>
+                    <p>On the third index card, write down the dominant color of your shirt (white, red, orange, yellow, green, blue, purple, brown, black). For a final time, stand up and take the card with you to the front of the room; if other students are already there, stand before or after them where there is room. Once everyone is in line, sort yourselves by color. You may not use the same steps you used for the Name Sort or Birthday Sort.</p>
+                    <p>Once everyone is sorted, return to your seats. Again, working with a partner, record the steps to Color Sort.</p>
+                    
                 </div>
                 <div class=bs-docs-section>
                     <h1 id=sort class=page-header>Sorting with Code</h1>
+                    <p class=lead>Now that we have three examples of pseudo code, we are going to work together to implement some of them in Python. While there are many different ways to sort sets of data, included are four standard options below. Some of our sorting algorithms may map closely to these. In any case, looking across ours and those included below will help shape our understanding of algorithm design.</p>
                     <h2 id=sort-bubble>Bubble sort</h2>
                     <p>Bubble sort is one of the most simple sorting algorithms. It starts at the beginning of the data set and compares the first two items, sorting them. It then works through the data continuing to sort in comparisons of two items. Once it has worked through the list the first time, it will have sorted the highest item to its last place. The algorithm them starts again and works through the set, repeating this process until no swaps are made in a final pass.</p>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif">
@@ -114,8 +122,10 @@ bubbleSort(alist)
 print(alist)
 </code></pre></figure>
 <h2 id=sort-insertion>Insertion sort</h2>
-                    <p>Example of insertion sort code:</p>
+                    <p>Insertion sort works a little differently than bubble sort, as it requires fewer passes across the items. It takes the first item and puts it into a new set. Then it works across the first set, item by item, and places it in the new set in its proper location. This method comes at the cost of being inefficient on larger data sets and sets that are not relatively sorted to begin with.</p>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Insertion_sort_animation.gif">
+                    <p>Example of insertion sort code:</p>
+                    
 
 <figure class=highlight><pre><code class=language-python data-lang=python>
 #http://interactivepython.org/runestone/static/pythonds/SortSearch/TheInsertionSort.html
@@ -137,6 +147,7 @@ print(alist)
 </code></pre></figure>
 
 <h2 id=sort-merge>Merge sort</h2>
+                    <p>Merge sort works on the premise that sorting subsets that are already sorted is effecient. It works by sorting pairs of items and them merging the sorted pairs together. It continues merging sorted sets until it merges the whole set together.</p>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Merge_sort_animation2.gif">
                     <p>Example of merge sort code:</p>
 
@@ -181,6 +192,7 @@ print(alist)
 </code></pre></figure>
 
 <h2 id=sort-quick>Quick sort</h2>
+<p>Of the sorting algorithms presented today, Quick Sort is the most complex. Using a pivot function, it breaks the original set up by a value and splits the items that are higher or lower than that value. It then follows the same procedure recursively through the higher and lower subsets (and subsets of subsets, etc) until the whole set is sorted.</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif">
                     <p>Example of quick sort code:</p>
 
@@ -236,10 +248,14 @@ print(alist)
                    
                 </div>
                 <div class=bs-docs-section>
-                    <h1 id=tables class=page-header>Considerations in evaluating algorithms</h1>
-                    <h2 id=tables-example>Basic example</h2>
-                    <p>For basic styling&mdash;light padding and only horizontal dividers&mdash;add the base class <code>.table</code> to any <code>&lt;table&gt;</code>. It may seem super redundant, but given the widespread use of tables for other plugins like calendars and date pickers, we've opted to isolate our custom table styles.</p>
-                    
+                    <h1 id=considerations class=page-header>Considerations in evaluating algorithms</h1>
+                    <h2 id=considerations-technical>Technical</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2 id=considerations-practical>Practical</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2 id=considerattions-ethical>Ethical</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
                 </div>
                 </div>
             <div class=col-md-3 role=complementary>
