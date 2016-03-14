@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=description content="Computational thinking, an introduction for students with no background in programming">
+    <meta name=keywords content="python, algorithms, sorting, computational thinking">
+    <meta name=author content="Colin Fitzpatrick">
+    <title> Sorting out sorting </title>
+    <link href=../../dist/css/bootstrap.min.css rel=stylesheet>
+    <link href="data:text/css;charset=utf-8," data-href=../../dist/css/bootstrap-theme.min.css rel=stylesheet id=bs-theme-stylesheet>
+    <link href=../../assets/css/docs.min.css rel=stylesheet>
+    <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src=../../assets/js/ie-emulation-modes-warning.js></script>
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <link rel=apple-touch-icon href=/apple-touch-icon.png>
+    <link rel=icon href=/favicon.ico>
+    
+</head>
+
+<body>
+
+    <div class=bs-docs-header id=content tabindex=-1>
+        <div class=container>
+            <h1>Sorting out sorting</h1>
+            <p>An introduction to computational thinking using sorting algorithms</p>
+        </div>
+    </div>
+    <div class="container bs-docs-container">
+        <div class=row>
+            <div class=col-md-9 role=main>
+                <div class=bs-docs-section>
+                    <h1 id=overview class=page-header>Overview</h1>
+                    <p class=lead>The concept of algorithms and their design can be difficult to grasp in the abstract. The purpose of this lesson is to first build out students’ understanding of how algorithms are implemented through activities and pseudocode, then apply those ideas in an exploration of commonly known sorting algorithms.</p>
+                    <h2 id=overview-doctype>Order of activities</h2>
+                    <p>The lesson is broken into four different sections, each with a distinct goal.</p>
+                    <ol>
+                    	<li>Algorithms role and function</li>
+                    	<li>Sorting Activities</li>
+                    	<li>Pseudocode/Implementation</li>
+                    	<li>Ways to evaluate</li>
+                    </ol>
+                    
+                    <h2 id=overview-mobile>Student Outcomes</h2>
+                    <p>Students will be able to:</p>
+                    <ol>
+                        <li>Identify problem spaces for algorithmic intervention</li>
+                        <li>Generate pseudocode for algorithm design</li>
+                        <li>Make implementation decisions given the problem space</li>
+                        <li>Evaluate algorithms</li>
+                    </ol>
+                    <h2 id=overview-notes>Notes on code examples</h2>
+                    <p>In part three and four of the workshop, we will be dealing directly with coding. The examples given are written for 
+                    Python 3 and will be offset in working code blocks as below:</p>
+                    <figure class=highlight><pre><code class=language-html data-lang=python>
+#example of code block
+print("Hello world")
+                        </code></pre></figure>
+                </div>
+                <div class=bs-docs-section>
+                    <h1 id=grid class=page-header>Algorithms' Role and Function</h1>
+                    <p class=lead>We encounter algorithms constantly in our daily routines. In this section of the workshop, we begin our discussion on the roles of algorithms in shaping our experiences.</p>
+                    <h2 id=grid-intro>What do algorithms do for you?</h2>
+                    <p>Working with a partner, work on the following questions/prompts.</p>
+                    <ul>
+                        <li>Find an example of when you think you encountered an algorithm yesterday.</li>
+                        <li>Describe the context and setting. What were you trying to do?</li>  
+                        <li>What did this algorithm do for you?</li>
+                        <li>What alternatives did you have?</li>
+                        <li>What steps did the algorithm take to come up with its response to you?</li>
+                        <li>What decisions or assumptions were made in the algorithms' design?</li>
+                    </ul>
+                    
+                    <h2 id=grid-media-queries>A working definition of algorithm</h2>
+                    <p>Given the discussion from the previous task, work independently to write down a working definition of an algorithm. Once done, share your definition with your partner. When the partners are done sharing, we will come together as a class to create a single working definition.</p>
+                    <p>Given this our new working definition, what do we think of the following:</p>
+                    <ul>
+                        <li>What can be considered an algorithm?</li>
+                        <li>What is not an algorithm?</li>
+                        <li>Where else do we encounter algorithms in our lives?</li>
+                        <li>What are examples of non-digital algorithms?</li>
+                        <li>What considerations are important in the development of algorithms?</li>
+                    </ul>
+                </div>
+                <div class=bs-docs-section>
+                    <h1 id=type class=page-header>Sorting without Code</h1>
+                    <h2 id=type-headings>Headings</h2>
+                    <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
+                    
+                </div>
+                <div class=bs-docs-section>
+                    <h1 id=sort class=page-header>Sorting with Code</h1>
+                    <h2 id=sort-bubble>Bubble sort</h2>
+                    <p>Bubble sort is one of the most simple sorting algorithms. </p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif">
+                    <p>Example of bubble sort code:</p>
+
+<figure class=highlight><pre><code class=language-python data-lang=python>
+#http://interactivepython.org/runestone/static/pythonds/SortSearch/TheBubbleSort.html
+def bubbleSort(alist):
+    for passnum in range(len(alist)-1,0,-1):
+        for i in range(passnum):
+            if alist[i]>alist[i+1]:
+                temp = alist[i]
+                alist[i] = alist[i+1]
+                alist[i+1] = temp
+
+alist = [54,26,93,17,77,31,44,55,20]
+bubbleSort(alist)
+print(alist)
+</code></pre></figure>
+<h2 id=sort-insertion>Insertion sort</h2>
+                    <p>Example of insertion sort code:</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Insertion_sort_animation.gif">
+
+<figure class=highlight><pre><code class=language-python data-lang=python>
+#http://interactivepython.org/runestone/static/pythonds/SortSearch/TheInsertionSort.html
+def insertionSort(alist):
+   for index in range(1,len(alist)):
+
+     currentvalue = alist[index]
+     position = index
+
+     while position>0 and alist[position-1]>currentvalue:
+         alist[position]=alist[position-1]
+         position = position-1
+
+     alist[position]=currentvalue
+
+alist = [54,26,93,17,77,31,44,55,20]
+insertionSort(alist)
+print(alist)
+</code></pre></figure>
+
+<h2 id=sort-merge>Merge sort</h2>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Merge_sort_animation2.gif">
+                    <p>Example of merge sort code:</p>
+
+<figure class=highlight><pre><code class=language-python data-lang=python>
+#http://interactivepython.org/runestone/static/pythonds/SortSearch/TheMergeSort.html
+def mergeSort(alist):
+    print("Splitting ",alist)
+    if len(alist)>1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+
+        i=0
+        j=0
+        k=0
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k]=lefthalf[i]
+                i=i+1
+            else:
+                alist[k]=righthalf[j]
+                j=j+1
+            k=k+1
+
+        while i < len(lefthalf):
+            alist[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+
+        while j < len(righthalf):
+            alist[k]=righthalf[j]
+            j=j+1
+            k=k+1
+    print("Merging ",alist)
+
+alist = [54,26,93,17,77,31,44,55,20]
+mergeSort(alist)
+print(alist)
+</code></pre></figure>
+
+<h2 id=sort-quick>Quick sort</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif">
+                    <p>Example of quick sort code:</p>
+
+<figure class=highlight><pre><code class=language-python data-lang=python>
+#http://interactivepython.org/runestone/static/pythonds/SortSearch/TheQuickSort.html
+
+def quickSort(alist):
+   quickSortHelper(alist,0,len(alist)-1)
+
+def quickSortHelper(alist,first,last):
+   if first < last:
+
+       splitpoint = partition(alist,first,last)
+
+       quickSortHelper(alist,first,splitpoint-1)
+       quickSortHelper(alist,splitpoint+1,last)
+
+
+def partition(alist,first,last):
+   pivotvalue = alist[first]
+
+   leftmark = first+1
+   rightmark = last
+
+   done = False
+   while not done:
+
+       while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
+           leftmark = leftmark + 1
+
+       while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
+           rightmark = rightmark -1
+
+       if rightmark < leftmark:
+           done = True
+       else:
+           temp = alist[leftmark]
+           alist[leftmark] = alist[rightmark]
+           alist[rightmark] = temp
+
+   temp = alist[first]
+   alist[first] = alist[rightmark]
+   alist[rightmark] = temp
+
+
+   return rightmark
+
+alist = [54,26,93,17,77,31,44,55,20]
+quickSort(alist)
+print(alist)
+</code></pre></figure>
+
+                   
+                </div>
+                <div class=bs-docs-section>
+                    <h1 id=tables class=page-header>Considerations in evaluating algorithms</h1>
+                    <h2 id=tables-example>Basic example</h2>
+                    <p>For basic styling&mdash;light padding and only horizontal dividers&mdash;add the base class <code>.table</code> to any <code>&lt;table&gt;</code>. It may seem super redundant, but given the widespread use of tables for other plugins like calendars and date pickers, we've opted to isolate our custom table styles.</p>
+                    
+                </div>
+                </div>
+            <div class=col-md-3 role=complementary>
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+                    <ul class="nav bs-docs-sidenav">
+                        <li> <a href=#overview>Overview</a>
+                            <ul class=nav>
+                                <li><a href=#overview-doctype>Order of activities</a></li>
+                                <li><a href=#overview-mobile>Student outcomes</a></li>
+                                <li><a href=#overview-notes>Notes on the code examples</a></li>
+                            </ul>
+                        </li>
+                        <li> <a href=#grid>Algorithms' role and function</a>
+                            <ul class=nav>
+                                <li><a href=#grid-intro>What do algorithms do for you?</a></li>
+                                <li><a href=#grid-media-queries>A working definition of algorithms</a></li>
+                            </ul>
+                        </li>
+                        <li> <a href=#codefree>Sorting without code</a>
+                            <ul class=nav>
+                                <li><a href=#codefree-name>By name</a></li>
+                                <li><a href=#codefree-birthday>By birthdate</a></li>
+                                <li><a href=#codefree-state>By colors</a></li>
+
+                            </ul>
+                        </li>
+                        <li> <a href=#sort>Sorting with code</a>
+                            <ul class=nav>
+                                <li><a href=#sort-intro>Intro</a></li>
+                                <li><a href=#sort-bubble>Bubble sort</a></li>
+                                <li><a href=#sort-insertion>Insertion sort</a></li>
+                                <li><a href=#sort-merge>Merge sort</a></li>
+                                <li><a href=#sort-quick>Quick sort</a></li>
+                            </ul>
+                        </li>
+                        <li> <a href=#considerations>Considerations in evaluation</a>
+                            <ul class=nav>
+                                <li><a href=#consideration-technical>Technical</a></li>
+                                <li><a href=#consideration-practical>Practical</a></li>
+                                <li><a href=#consideration-ethical>Ethical</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul> <a class=back-to-top href=#top> Back to top </a> <a href=# class=bs-docs-theme-toggle role=button> Preview theme </a> </nav>
+            </div>
+        </div>
+    </div>
+    <footer class=bs-docs-footer role=contentinfo>
+        <div class=container>
+            <ul class=bs-docs-footer-links>
+                <li><a href=https://github.com/twbs/bootstrap>GitHub</a></li>
+                <li><a href=https://twitter.com/getbootstrap>Twitter</a></li>
+                <li><a href=../getting-started/#examples>Examples</a></li>
+                <li><a href="../about/">About</a></li>
+            </ul>
+            <p>Designed and built with all the love in the world by <a href=https://twitter.com/mdo target=_blank>@mdo</a> and <a href=https://twitter.com/fat target=_blank>@fat</a>. Maintained by the <a href=https://github.com/orgs/twbs/people>core team</a> with the help of <a href=https://github.com/twbs/bootstrap/graphs/contributors>our contributors</a>.</p>
+            <p>Code licensed <a rel=license href=https://github.com/twbs/bootstrap/blob/master/LICENSE target=_blank>MIT</a>, docs <a rel=license href=https://creativecommons.org/licenses/by/3.0/ target=_blank>CC BY 3.0</a>.</p>
+        </div>
+    </footer>
+    <script src=https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js></script>
+    <script>
+        window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>');
+    </script>
+    <script src=../../dist/js/bootstrap.min.js></script>
+    <script src=../../assets/js/docs.min.js></script>
+    <script src=../../assets/js/ie10-viewport-bug-workaround.js></script>
+    <script>
+        var _gauges = _gauges || [];
+        ! function() {
+            var e = document.createElement("script");
+            e.async = !0, e.id = "gauges-tracker", e.setAttribute("data-site-id", "4f0dc9fef5a1f55508000013"), e.src = "//secure.gaug.es/track.js";
+            var t = document.getElementsByTagName("script")[0];
+            t.parentNode.insertBefore(e, t)
+        }();
+    </script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        (function(d, s, a, i, j, r, l, m) {
+            try {
+                l = d.getElementsByTagName('a');
+                t = d.createElement('textarea');
+                for (i = 0; l.length - i; i++) {
+                    try {
+                        a = l[i].href;
+                        s = a.indexOf('/cdn-cgi/l/email-protection');
+                        m = a.length;
+                        if (a && s > -1 && m > 28) {
+                            j = 28 + s;
+                            s = '';
+                            if (j < m) {
+                                r = '0x' + a.substr(j, 2) | 0;
+                                for (j += 2; j < m && a.charAt(j) != 'X'; j += 2) s += '%' + ('0' + ('0x' + a.substr(j, 2) ^ r).toString(16)).slice(-2);
+                                j++;
+                                s = decodeURIComponent(s) + a.substr(j, m - j)
+                            }
+                            t.innerHTML = s.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                            l[i].href = 'mailto:' + t.value
+                        }
+                    } catch (e) {}
+                }
+            } catch (e) {}
+        })(document); /* ]]> */
+    </script>
+</body>
+
+</html>
