@@ -1,0 +1,11 @@
+code {
+    font-family: monospace;
+    
+    color: #48d8a0;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+pre {
+	background: #272b38;
+}
