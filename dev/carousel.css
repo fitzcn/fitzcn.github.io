@@ -33,6 +33,23 @@ body {
   width: auto;
 }
 
+/*HERO IMAG*/
+.hero{
+ background:url(http://fitzcn.net/img/fitzcn-hero.jpg);
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+}
+
+.hero, .content{
+  text-align:center; 
+  position:relative;
+  width: 100%;
+  min-height:600px;
+}
+
+
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -80,6 +97,8 @@ body {
 .marketing {
   margin-top: 40px
 }
+
+
 
 
 /* Featurettes
