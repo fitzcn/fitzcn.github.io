@@ -77,12 +77,16 @@ body {
   margin-left: 10px;
 }
 
+.marketing {
+  margin-top: 40px
+}
+
 
 /* Featurettes
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 40px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -90,6 +94,10 @@ body {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
+}
+
+.map{
+  height: 240px;
 }
 
 
