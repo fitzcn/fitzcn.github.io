@@ -1,0 +1,329 @@
+<!doctype html>
+<!-- special thanks to Singleton for lastfm script,https://github.com/dsingleton/now-playing-radiator-->
+<!-- special thanks to Mayes for twitter script, http://www.jasonmayes.com/projects/twitterApi/ -->
+<!--hello world!-->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Colin Fitzpatrick</title>
+
+    <!--<script src="js/lastfm.js"></script>-->
+    <!--<script src="js/now-playing.js"></script>-->
+    <!--<script src="js/tweet.js"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src='js/jquery.scrollto.js'></script>
+    <!--<script>
+    
+    (function (document) {
+        
+        var get_username = function() {
+            // format: #username, or #!/user/username, prompt fallback
+            return document.location.hash.split('/')[2] || 
+                           document.location.hash.substring(1) || 
+                           prompt('Enter a Last.fm username?');
+        };
+    
+        $(document).ready(function() {        
+            // Canonicalise/Persist hash
+            document.location.hash = username = 'fitzcn';
+        
+            var api = new LastfmAPI('5f134f063744307ee6f126ac2c480fab');
+
+            np = new NowPlaying(api, username);
+            np.autoUpdate();
+        });
+    
+        // Needs replacing with a cross browser jquery plugin
+        window.onhashchange = function(event) {
+            username = get_username();
+            if (username != np.user) {
+                np.user = username;
+                np.update();
+            }
+        };
+        
+    })(document);-->
+    
+    </script>
+    <script>
+        try { Typekit.load(); } catch (e) {}
+    </script>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+    <!--<![endif]-->
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/layouts/side-menu.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+    <!--<![endif]-->
+   
+</head>
+
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T2X3MV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T2X3MV');</script>
+<!-- End Google Tag Manager -->
+    <div id="layout">
+        <a href="#menu" id="menuLink" class="menu-link">
+        <span></span>
+        </a>
+        <div id="menu">
+            <nav>
+            <div class="pure-menu pure-menu-open">
+                <a class="pure-menu-heading" href="#top">Colin</a>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#cv">CV</a></li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        <div class="main" id="top">
+            <div class="header">
+                <img class="pure-img-responsive" src="/img/fitzcn.jpg" alt="photo of Colin using a smartphone">
+                <h1>Colin Fitzpatrick</h1>
+                <h2>PhD student of technology and social behavior</h2>
+                
+                <a class="icon" href="https://www.google.com/maps/place/2240+Campus+Dr,+Northwestern+University,+Evanston+Campus,+Evanston,+IL+60201/@42.0584652,-87.6738503,15z/data=!4m2!3m1!1s0x880fda9ebcbe2e6b:0x9395243c6e0035e7"><span class="fa fa-map-marker"></span></a>
+                <a class="icon" href="http://twitter.com/fitzcn"><span class="fa fa-twitter"></span></a>
+                <a class="icon" href="http://last.fm/user/fitzcn"><span class="fa fa-lastfm"></span></a>
+            </div>
+            <div class="content">
+                <section id="about">
+                <h2 class="content-subhead">About me</h2>
+                    <p>
+                        I am delighted to be in my third year of Northwestern University’s PhD program in Technology and Social Behavior. A unique combination of computer science and communication studies, the faculty that I work with live at the intersection of research and design. I am currently developing my skills as both a designer and a developer, focusing on mixed methods approaches to studying social media.</p>
+                    <p>
+                        I attended Brown University for my B.A. in ethnomusicology, where I studied the role of technology in impression management of music consumption practices. In 2012 I completed a master’s of the arts in ethnomusicology at UW-Madison, focusing on the role of technology in music production and consumption in 20th and 21st century China. At Northwestern, I am a member of the Social Media Lab, led by Professor Jeremy Birnholtz, where I study location-aware mobile social networking applications.</p>
+                </section>
+                <section id="research">
+                <h2 class="content-subhead">Research</h2>
+                    <p>
+                        My research has continuously focused on the relationship between technology and contexts of use, specific to time, place, and audience. In undergrad, I investigated how online profiles shifted a private music consumption to a public audience; in my master's program I examined how recording technology collapsed time, distance, and audiences in ballrooms and nightclubs. Now I am studying social media and mobile technologies sensitive to changing contexts of use given GPS, mobile, and WiFi networks. 
+                    </p>
+                </section>
+                <section id="projects">
+                <h2 class="content-subhead">Projects</h2>
+                    <p>
+                        My latest projects during my time at Northwestern. 
+                    </p>
+                    <div class="pure-g">
+
+                        <div class="pure-u-1 pure-u-md-1-2">
+                        <div class="project-box">
+                            <h3 class="content-subhead-2">Volunteered Geographic Information</h3>
+                            <img class="pure-img-responsive project-img" src="/img/ugcvgi.jpg" alt="map of user generated content">
+                            <p>
+                                Millions of users generate and post content daily. What is the relationship between their offline context while posting (time, place) and their content in the media stream?
+                            </p>                       
+                        </div>
+                        </div>  
+                        <div class="pure-u-1 pure-u-md-1-2">
+                        <div class="project-box">
+                            <h3 class="content-subhead-2">Location-based Real Time Apps</h3>
+                            <img class="pure-img-responsive project-img" src="/img/lbrtapp.jpg" alt="example of location based real time app network">
+                            <p>
+                                A growing number of apps connect nearby others for near-immediate in-person interaction, ranging from coffee to casual sex. How do users protray themselves to others in these spaces? What are in-person interactions like with someone you've just "met"? 
+                            </p>
+                            <ul class="papers">
+                                <li>
+                                    <a target="_blank" class="icon" href="http://dl.acm.org/authorize.cfm?key=N89562"><span class="fa fa-file-pdf-o"> Mobile HCI 2014</span></a>
+                                </li>
+                                <li>
+                                    <a target="_blank" class="icon" href="http://socialmedia.northwestern.edu/files/2014/09/20140914-hicss-disclosure-cameraready-IEEE-checked.pdf"><span class="fa fa-file-pdf-o"> HICSS 2015</span></a>
+                                </li>
+                            </ul>
+                        </div>        
+                        </div>
+                    </div>
+                    <div class="pure-g">
+                        <div class="pure-u-1 pure-u-md-1-2">
+                        <div class="project-box">
+                            <h3 class="content-subhead-2">Computer-Supported Group Critique</h3>
+                            <img class="pure-img-responsive project-img" src="/img/compsupportedgroupcritique.jpg" alt="model of computer supported group critique">
+                            <p>
+                                Novice civic designers face multiple challenges as they embark on tackling real world problems, including learning the design process and participating in critiques. How can a computer-supported group critique system fit into novice designer studios?
+                            </p>
+                            <ul class="papers">
+                                <li>
+                                    <a target="_blank" class="icon" href="http://dl.acm.org/citation.cfm?id=2600889"><span class="fa fa-file-pdf-o"> DIS 2014</span></a>
+                                </li>
+                            </ul>
+                        </div>    
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-2">
+                        <div class="project-box">
+                            <h3 class="content-subhead-2">Perspective Taking and Games</h3>
+                            <img class="pure-img-responsive project-img" src="/img/perspectivedetective.jpg" alt="screenshot of perspective detective game screen">
+                            <p>
+                                Students of politics regularly default to simple partisan arguments without understanding the range of political ideologies within policy debates. How may a game help teach perspective taking and political ideologies to better students' public policy skills?
+                            </p>
+                            <ul class="papers">
+                                <li>
+                                    <a target="_blank" class="icon" href="http://delta.northwestern.edu/wordpress/wp-content/uploads/2013/11/Fitzpatrick-2013-Perspective-Taking-Political-Ideologies-and-Digital-Ethics.pdf"><span class="fa fa-file-pdf-o"> Symposium on Digital Ethics</span></a>
+                                </li>
+                            </ul>
+                        </div>    
+                        </div>        
+                    </div>
+                </section>
+                <section id="cv">
+                <h2 class="content-subhead">CV</h2>
+                    <p>
+                        <a target="_blank" class="icon" href="/files/Fitzpatrick-CV-201406.pdf"><span class="fa fa-file-pdf-o"> A .pdf version of my CV.</span></a>  
+                    </p>
+                    <h3>
+                        <span class="fa fa-institution"> Education</span>
+                    </h3>
+                    <ul>
+                        <li class="cv">
+                            Northwestern University, PhD in Technology and Social Behavior, 2012-present
+                        </li>    
+                        <li class="cv">
+                            UW-Madison, M.A. in Ethnomusicology, 2009-2012
+                        </li>
+                        <li class="cv">
+                            Brown University, B.A. in Ethnomusicology, 2005-2009 
+                        </li>
+                    </ul>
+                    <h3>
+                        <span class="fa fa-file-text"> Papers and Presentations</span>
+                    </h3>
+                    <ul>
+                        <li class="cv hanging-indent">Birnholtz, J., Fitzpatrick, C., Handel, M., Brubaker, J. “Identity, Identification, and Identifiability: The Language of Self-Presentation on a Location-Based Mobile Dating App.” Mobile HCI 2014. Toronto, September 2014. </li>
+                        <li class="cv hanging-indent">Easterday, M., Lewis, D., Fitzpatrick, C., Gerber, E. “Computer Supported Novice Group Critique.” DIS 2014. Vancouver, June 2014. </li>
+                        <li class="cv hanging-indent">Fitzpatrick, C., Hope, A., Barhumi, S., Krupnikov, Y., Easterday, M. “Perspective Taking, Political Ideologies, and Digital Games.” Proceedings in 3rd Annual International Symposium on Digital Ethics. Chicago, October 2013. </li>
+                        <li class="cv hanging-indent">Beheshti, E., Fitzpatrick, C., Hope, A., Piper, A.M., & Horn, M.S. (2013) Circuit in Pieces: Understanding Electricity from Electrons to Light Bulbs. Proc. HumanFactors in Computing Systems Conference (extended abstracts) CHI’13. Paris, April 2013.</li>
+                        <li class="cv hanging-indent">“A ‘New’ Sociability: Etiquette, Practices and Interactions with Mobile Technologies.” Midwest Chapter of the Society for Ethnomusicology Annual Meeting. Bowling Green, OH, April 2011. </li>
+                        <li class="cv hanging-indent">“The Female Body, Interrogation, and War: Readings of and Reactions to Rihanna’s Russian Roulette and Hard.” Midwest Graduate Music Conference. Madison, WI, March 2011.</li>
+                        <li class="cv hanging-indent">“Scrobbling Identity: Impression Management and Last.fm.” Northeast Chapter of the Society for Ethnomusicology Annual Meeting. New Haven, CT, April 2009.</li>
+                    </ul>
+                    <h3>
+                        <span class="fa fa-book"> Teaching</span>
+
+                    </h3>
+                    <ul>
+                        <li class="cv">Teaching Assistant, Northwestern University, Spring 2014 </li>
+                        <li class="cv">Teaching Assistant, UW-Madison, Fall 2010 – Spring 2012</li>
+                        <li class="cv">Teaching Assistant, Department of Music, Brown University, Spring 2007- Summer 2009</li>
+                    </ul>
+                    <h3>
+                        <span class="fa fa-trophy"> Awards and Honors</span>
+                    </h3>
+                    <ul>
+                        <li class="cv">NSF GK12 Reach for the Stars Fellow, Northwestern University, 2014-2015</li>
+                        <li class="cv">US Department of Education Foreign Language and Area Studies Fellow, UW-Madison, 2010-2011</li>
+                        <li class="cv">University Fellow, UW-Madison, 2009-2010</li>
+                        <li class="cv">Vilas Welcome Award, UW-Madison, 2009</li>
+                        <li class="cv">Rose Rosengard Subotnik Prize, Brown University, 2009 </li>
+                        <li class="cv">Best Undergraduate Thesis, Department of Science and Technology Studies, Brown University, 2009</li>
+                        <li class="cv">Buxtehude Premium, Brown University, 2008</li>
+                    </ul>
+                    
+
+
+                    
+                </section>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+
+<!--
+<section class="toppers">
+    <h1><span class="fa fa-lastfm"></span> Last listened to
+        <span id="artist">Artist</span>
+        <span class="separator"> </span> 
+        <span id="track">Track</span>
+    </h1>
+    <h1>
+        <span class="fa fa-twitter"></span>
+        <h1 id="latestTweet">Last tweeted 
+        </h1>
+    </h1>
+</section>
+
+ -->             
+<script src="js/ui.js"></script>
+<script>
+(function ($) {
+    $(document).ready(function(){
+
+    /**
+     * This part causes smooth scrolling using scrollto.js
+     * We target all a tags inside the nav, and apply the scrollto.js to it.
+     */
+    $(".pure-menu a").click(function(evn){
+        evn.preventDefault();
+        $('html,body').scrollTo(this.hash, this.hash); 
+    });
+
+    /**
+     * This part handles the highlighting functionality.
+     * We use the scroll functionality again, some array creation and 
+     * manipulation, class adding and class removing, and conditional testing
+     */
+    var aChildren = $(".pure-menu li").children(); // find the a children of the list items
+    var aArray = []; // create the empty aArray
+    for (var i=0; i < aChildren.length; i++) {    
+        var aChild = aChildren[i];
+        var ahref = $(aChild).attr('href');
+        aArray.push(ahref);
+    } // this for loop fills the aArray with attribute href values
+
+    $(window).scroll(function(){
+        var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
+        var windowHeight = $(window).height(); // get the height of the window
+        var docHeight = $(document).height();
+
+        for (var i=0; i < aArray.length; i++) {
+            var theID = aArray[i];
+            var divPos = $(theID).offset().top; // get the offset of the div from the top of page
+            var divHeight = $(theID).height(); // get the height of the div in question
+            if (windowPos >= (divPos-1) && windowPos < (divPos + divHeight + 49)) {
+                $("a[href='" + theID + "']").addClass("pure-menu-selected");
+            } else {
+                $("a[href='" + theID + "']").removeClass("pure-menu-selected");
+            }
+        }
+
+        if(windowPos + windowHeight == docHeight) {
+            if (!$("nav li:last-child a").hasClass("pure-menu-selected")) {
+                var navActiveCurrent = $(".pure-menu-selected").attr("href");
+                $("a[href='" + navActiveCurrent + "']").removeClass("pure-menu-selected");
+                $("nav li:last-child a").addClass("pure-menu-selected");
+            }
+        }
+    });
+});
+}(jQuery));
+</script>
+
+</body>
+</html>
+

@@ -1,204 +1,240 @@
-<!doctype html>
-<!-- special thanks to Singleton for lastfm script,https://github.com/dsingleton/now-playing-radiator-->
-<!-- special thanks to Mayes for twitter script, http://www.jasonmayes.com/projects/twitterApi/ -->
-<!--hello world!-->
-<head>
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Colin Fitzpatrick</title>
 
-    <!--<script src="js/lastfm.js"></script>-->
-    <!--<script src="js/now-playing.js"></script>-->
-    <!--<script src="js/tweet.js"></script>-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Colin Fitzpatrick's professional website about his work in the field of human computer interaction and computer mediated communication.">
+    <meta name="author" content="Colin Fitzpatrick">
+    <link rel="icon" href="../../favicon.ico">
 
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src='js/jquery.scrollto.js'></script>
-    <!--<script>
-    
-    (function (document) {
-        
-        var get_username = function() {
-            // format: #username, or #!/user/username, prompt fallback
-            return document.location.hash.split('/')[2] || 
-                           document.location.hash.substring(1) || 
-                           prompt('Enter a Last.fm username?');
-        };
-    
-        $(document).ready(function() {        
-            // Canonicalise/Persist hash
-            document.location.hash = username = 'fitzcn';
-        
-            var api = new LastfmAPI('5f134f063744307ee6f126ac2c480fab');
+    <title>DEV</title>
 
-            np = new NowPlaying(api, username);
-            np.autoUpdate();
-        });
-    
-        // Needs replacing with a cross browser jquery plugin
-        window.onhashchange = function(event) {
-            username = get_username();
-            if (username != np.user) {
-                np.user = username;
-                np.update();
-            }
-        };
-        
-    })(document);-->
-    
-    </script>
-    <script>
-        try { Typekit.load(); } catch (e) {}
-    </script>
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
-    <!--<![endif]-->
-        <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/layouts/side-menu.css">
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
-    <!--<![endif]-->
-   
-</head>
 
-<body>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T2X3MV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T2X3MV');</script>
-<!-- End Google Tag Manager -->
-    <div id="layout">
-        <a href="#menu" id="menuLink" class="menu-link">
-        <span></span>
-        </a>
-        <div id="menu">
-            <nav>
-            <div class="pure-menu pure-menu-open">
-                <a class="pure-menu-heading" href="#top">Colin</a>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#cv">CV</a></li>
-                </ul>
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+    <link href="rubik.css" rel="stylesheet">
+
+    <!--leaflet-->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+    <!--FAwesome-->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-burger navbar-transparent" role="navigation">
+            <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+            <div class="container">
+                <div class="navbar-header">
+                    <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                    </button>
+                    <a target="_blank" href="" class="navbar-brand">
+                    Colin Fitzpatrick
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right navbar-uppercase">
+                        <li class="social-links">
+                            <a href="https://linkedin.com/in/fitzcn">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="https://twitter.com/fitzcn">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="http://last.fm/user/fitzcn">
+                                <i class="fa fa-lastfm"></i>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href data-scroll="true" data-id="#about">
+                            About
+                            </a>
+                        </li>
+                        <li>
+                            <a href data-scroll="true" data-id="#projects">
+                            Projects
+                            </a>
+                        </li>
+                        <li>
+                            <a href data-scroll="true" data-id="#cv">
+                            CV
+                            </a>
+                        </li>
+                        <li>
+                            <a href data-scroll="true" data-id="#labmates">
+                            Lab Mates
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
-            </nav>
+        </nav>
+
+
+    <!-- Carousel 
+    ================================================== -->
+    <div class="section section-header">
+                <div class="hero">
+                    
+                     
+                    <!-- <img src="http://fitzcn.net/img/fitzcn-hero.jpg">
+                    <div class="container">
+                        <div class="content">
+                            <h1>Creative Tim</h1>
+                            <div class="separator-container">
+                                <div class="separator line-separator">∎</div>
+                            </div>
+                            <h5>Awesome Bootstrap freebies and templates to build better websites</h5>
+                        </div>
+                    </div>-->
+                </div>
+                <!--<a href="" data-scroll="true" data-id="#whoWeAre" class="scroll-arrow hidden-xs hidden-sm">
+                <i class="fa fa-angle-down"></i>
+                </a>-->
+            </div>
+            <!--
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      Indicators 
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
         </div>
-        <div class="main" id="top">
-            <div class="header">
-                <img class="pure-img-responsive" src="/img/fitzcn.jpg" alt="photo of Colin using a smartphone">
-                <h1>Colin Fitzpatrick</h1>
-                <h2>PhD student of technology and social behavior</h2>
-                
-                <a class="icon" href="https://www.google.com/maps/place/2240+Campus+Dr,+Northwestern+University,+Evanston+Campus,+Evanston,+IL+60201/@42.0584652,-87.6738503,15z/data=!4m2!3m1!1s0x880fda9ebcbe2e6b:0x9395243c6e0035e7"><span class="fa fa-map-marker"></span></a>
-                <a class="icon" href="http://twitter.com/fitzcn"><span class="fa fa-twitter"></span></a>
-                <a class="icon" href="http://last.fm/user/fitzcn"><span class="fa fa-lastfm"></span></a>
+        <div class="item">
+          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
-            <div class="content">
-                <section id="about">
-                <h2 class="content-subhead">About me</h2>
-                    <p>
-                        I am delighted to be in my third year of Northwestern University’s PhD program in Technology and Social Behavior. A unique combination of computer science and communication studies, the faculty that I work with live at the intersection of research and design. I am currently developing my skills as both a designer and a developer, focusing on mixed methods approaches to studying social media.</p>
-                    <p>
-                        I attended Brown University for my B.A. in ethnomusicology, where I studied the role of technology in impression management of music consumption practices. In 2012 I completed a master’s of the arts in ethnomusicology at UW-Madison, focusing on the role of technology in music production and consumption in 20th and 21st century China. At Northwestern, I am a member of the Social Media Lab, led by Professor Jeremy Birnholtz, where I study location-aware mobile social networking applications.</p>
-                </section>
-                <section id="research">
-                <h2 class="content-subhead">Research</h2>
-                    <p>
-                        My research has continuously focused on the relationship between technology and contexts of use, specific to time, place, and audience. In undergrad, I investigated how online profiles shifted a private music consumption to a public audience; in my master's program I examined how recording technology collapsed time, distance, and audiences in ballrooms and nightclubs. Now I am studying social media and mobile technologies sensitive to changing contexts of use given GPS, mobile, and WiFi networks. 
-                    </p>
-                </section>
-                <section id="projects">
-                <h2 class="content-subhead">Projects</h2>
-                    <p>
-                        My latest projects during my time at Northwestern. 
-                    </p>
-                    <div class="pure-g">
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>/.carousel -->
 
-                        <div class="pure-u-1 pure-u-md-1-2">
-                        <div class="project-box">
-                            <h3 class="content-subhead-2">Volunteered Geographic Information</h3>
-                            <img class="pure-img-responsive project-img" src="/img/ugcvgi.jpg" alt="map of user generated content">
-                            <p>
-                                Millions of users generate and post content daily. What is the relationship between their offline context while posting (time, place) and their content in the media stream?
-                            </p>                       
-                        </div>
-                        </div>  
-                        <div class="pure-u-1 pure-u-md-1-2">
-                        <div class="project-box">
-                            <h3 class="content-subhead-2">Location-based Real Time Apps</h3>
-                            <img class="pure-img-responsive project-img" src="/img/lbrtapp.jpg" alt="example of location based real time app network">
-                            <p>
-                                A growing number of apps connect nearby others for near-immediate in-person interaction, ranging from coffee to casual sex. How do users protray themselves to others in these spaces? What are in-person interactions like with someone you've just "met"? 
-                            </p>
-                            <ul class="papers">
-                                <li>
-                                    <a target="_blank" class="icon" href="http://dl.acm.org/authorize.cfm?key=N89562"><span class="fa fa-file-pdf-o"> Mobile HCI 2014</span></a>
-                                </li>
-                                <li>
-                                    <a target="_blank" class="icon" href="http://socialmedia.northwestern.edu/files/2014/09/20140914-hicss-disclosure-cameraready-IEEE-checked.pdf"><span class="fa fa-file-pdf-o"> HICSS 2015</span></a>
-                                </li>
-                            </ul>
-                        </div>        
-                        </div>
-                    </div>
-                    <div class="pure-g">
-                        <div class="pure-u-1 pure-u-md-1-2">
-                        <div class="project-box">
-                            <h3 class="content-subhead-2">Computer-Supported Group Critique</h3>
-                            <img class="pure-img-responsive project-img" src="/img/compsupportedgroupcritique.jpg" alt="model of computer supported group critique">
-                            <p>
-                                Novice civic designers face multiple challenges as they embark on tackling real world problems, including learning the design process and participating in critiques. How can a computer-supported group critique system fit into novice designer studios?
-                            </p>
-                            <ul class="papers">
-                                <li>
-                                    <a target="_blank" class="icon" href="http://dl.acm.org/citation.cfm?id=2600889"><span class="fa fa-file-pdf-o"> DIS 2014</span></a>
-                                </li>
-                            </ul>
-                        </div>    
-                        </div>
-                        <div class="pure-u-1 pure-u-md-1-2">
-                        <div class="project-box">
-                            <h3 class="content-subhead-2">Perspective Taking and Games</h3>
-                            <img class="pure-img-responsive project-img" src="/img/perspectivedetective.jpg" alt="screenshot of perspective detective game screen">
-                            <p>
-                                Students of politics regularly default to simple partisan arguments without understanding the range of political ideologies within policy debates. How may a game help teach perspective taking and political ideologies to better students' public policy skills?
-                            </p>
-                            <ul class="papers">
-                                <li>
-                                    <a target="_blank" class="icon" href="http://delta.northwestern.edu/wordpress/wp-content/uploads/2013/11/Fitzpatrick-2013-Perspective-Taking-Political-Ideologies-and-Digital-Ethics.pdf"><span class="fa fa-file-pdf-o"> Symposium on Digital Ethics</span></a>
-                                </li>
-                            </ul>
-                        </div>    
-                        </div>        
-                    </div>
-                </section>
-                <section id="cv">
-                <h2 class="content-subhead">CV</h2>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <hr class="featurette-divider" id="about">
+    <div class="container marketing" >
+     
+     <h2 class="text-center">About</h2>
+     <hr class="featurette-divider">
+    <p>
+                        I am a PhD candidate in Northwestern University’s program in Technology and Social Behavior, a dual program in computer science and communication studies. My work centers on mediated information disclosure between strangers in emergent relationships. Currently, I am focusing on how locations and places play a role in getting to know someone.</p>
                     <p>
-                        <a target="_blank" class="icon" href="/files/Fitzpatrick-CV-201406.pdf"><span class="fa fa-file-pdf-o"> A .pdf version of my CV.</span></a>  
-                    </p>
-                    <h3>
-                        <span class="fa fa-institution"> Education</span>
-                    </h3>
-                    <ul>
+                        At Northwestern, I am a member of the Social Media Lab, led by Professor Jeremy Birnholtz.</p>
+
+      
+
+
+      <!-- START THE PROJECTS -->
+      <hr class="featurette-divider" id="projects">
+      <h2 class="text-center">Projects</h2>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">VGI. <span class="text-muted">What does where you've been say?</span></h2>
+          <p class="lead">Millions of users generate and post content daily. What is the relationship between their offline context while posting (time, place) and their content in the media stream?</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="../img/ugcvgi.jpg" alt="map of user generated content">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">LBSA. <span class="text-muted">How do people meet through apps?</span></h2>
+          <p class="lead">A growing number of apps connect nearby others for near-immediate in-person interaction, ranging from coffee to casual sex. How do users protray themselves to others in these spaces? What are in-person interactions like with someone you've just "met"?</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="/img/lbrtapp.jpg" alt="diagram of location based real time app network">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">CSGC. <span class="text-muted">How can we support novice designers online?</span></h2>
+          <p class="lead">Novice civic designers face multiple challenges as they embark on tackling real world problems, including learning the design process and participating in critiques. How can a computer-supported group critique system fit into novice designer studios?</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="/img/compsupportedgroupcritique.jpg" alt="model of computer supported group critique">
+        </div>
+      </div>
+      <!-- /START THE CV -->
+      <hr class="featurette-divider" id="cv">
+      <h2 class="text-center" >CV</h2>
+
+      <hr class="featurette-divider"> 
+      <div class="row ">
+        <div class="col-md-10 col-md-push-2">
+          <h2>Education</h2>
+          <ul class="lead">
                         <li class="cv">
                             Northwestern University, PhD in Technology and Social Behavior, 2012-present
                         </li>    
@@ -209,31 +245,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             Brown University, B.A. in Ethnomusicology, 2005-2009 
                         </li>
                     </ul>
-                    <h3>
-                        <span class="fa fa-file-text"> Papers and Presentations</span>
-                    </h3>
-                    <ul>
+        </div>
+        <div class="col-md-2 col-md-pull-10">
+          <i class="fa fa-institution fa-5x"></i>
+        </div>
+      </div>
+
+      <hr class="featurette-divider"> 
+
+      <div class="row ">
+        <div class="col-md-10 col-md-push-2">
+          <h2>Papers and Presentations</h2>
+          
+            <ul class="lead">
                         <li class="cv hanging-indent">Birnholtz, J., Fitzpatrick, C., Handel, M., Brubaker, J. “Identity, Identification, and Identifiability: The Language of Self-Presentation on a Location-Based Mobile Dating App.” Mobile HCI 2014. Toronto, September 2014. </li>
                         <li class="cv hanging-indent">Easterday, M., Lewis, D., Fitzpatrick, C., Gerber, E. “Computer Supported Novice Group Critique.” DIS 2014. Vancouver, June 2014. </li>
                         <li class="cv hanging-indent">Fitzpatrick, C., Hope, A., Barhumi, S., Krupnikov, Y., Easterday, M. “Perspective Taking, Political Ideologies, and Digital Games.” Proceedings in 3rd Annual International Symposium on Digital Ethics. Chicago, October 2013. </li>
-                        <li class="cv hanging-indent">Beheshti, E., Fitzpatrick, C., Hope, A., Piper, A.M., & Horn, M.S. (2013) Circuit in Pieces: Understanding Electricity from Electrons to Light Bulbs. Proc. HumanFactors in Computing Systems Conference (extended abstracts) CHI’13. Paris, April 2013.</li>
+                        <li class="cv hanging-indent">Beheshti, E., Fitzpatrick, C., Hope, A., Piper, A.M., &amp; Horn, M.S. (2013) Circuit in Pieces: Understanding Electricity from Electrons to Light Bulbs. Proc. HumanFactors in Computing Systems Conference (extended abstracts) CHI’13. Paris, April 2013.</li>
                         <li class="cv hanging-indent">“A ‘New’ Sociability: Etiquette, Practices and Interactions with Mobile Technologies.” Midwest Chapter of the Society for Ethnomusicology Annual Meeting. Bowling Green, OH, April 2011. </li>
                         <li class="cv hanging-indent">“The Female Body, Interrogation, and War: Readings of and Reactions to Rihanna’s Russian Roulette and Hard.” Midwest Graduate Music Conference. Madison, WI, March 2011.</li>
                         <li class="cv hanging-indent">“Scrobbling Identity: Impression Management and Last.fm.” Northeast Chapter of the Society for Ethnomusicology Annual Meeting. New Haven, CT, April 2009.</li>
                     </ul>
-                    <h3>
-                        <span class="fa fa-book"> Teaching</span>
+          
+        </div>
+        <div class="col-md-2 col-md-pull-10">
+          <i class="fa fa-file-text fa-5x"></i>
+        </div>
+      </div>
 
-                    </h3>
-                    <ul>
+      <hr class="featurette-divider"> 
+
+      <div class="row ">
+        <div class="col-md-10 col-md-push-2">
+          <h2>Teaching</h2>
+          
+            <ul class="lead">
                         <li class="cv">Teaching Assistant, Northwestern University, Spring 2014 </li>
                         <li class="cv">Teaching Assistant, UW-Madison, Fall 2010 – Spring 2012</li>
                         <li class="cv">Teaching Assistant, Department of Music, Brown University, Spring 2007- Summer 2009</li>
                     </ul>
-                    <h3>
-                        <span class="fa fa-trophy"> Awards and Honors</span>
-                    </h3>
-                    <ul>
+          
+        </div>
+        <div class="col-md-2 col-md-pull-10">
+          <i class="fa fa-book fa-5x"></i>
+        </div>
+      </div>
+
+
+       <hr class="featurette-divider"> 
+
+      <div class="row ">
+        <div class="col-md-10 col-md-push-2">
+          <h2>Awards and Honors</h2>
+          
+            <ul class="lead">
                         <li class="cv">NSF GK12 Reach for the Stars Fellow, Northwestern University, 2014-2015</li>
                         <li class="cv">US Department of Education Foreign Language and Area Studies Fellow, UW-Madison, 2010-2011</li>
                         <li class="cv">University Fellow, UW-Madison, 2009-2010</li>
@@ -242,88 +307,156 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li class="cv">Best Undergraduate Thesis, Department of Science and Technology Studies, Brown University, 2009</li>
                         <li class="cv">Buxtehude Premium, Brown University, 2008</li>
                     </ul>
+          
+        </div>
+        <div class="col-md-2 col-md-pull-10">
+          <i class="fa fa-trophy fa-5x"></i>
+        </div>
+      </div>
+
+
+      
+
+
+
+
+                   
+                        
+                    
+                        
+
                     
 
 
-                    
-                </section>
-            </div>
-        </div>
-        </div>
-    </div>
-    
 
 
-<!--
-<section class="toppers">
-    <h1><span class="fa fa-lastfm"></span> Last listened to
-        <span id="artist">Artist</span>
-        <span class="separator"> </span> 
-        <span id="track">Track</span>
-    </h1>
-    <h1>
-        <span class="fa fa-twitter"></span>
-        <h1 id="latestTweet">Last tweeted 
-        </h1>
-    </h1>
-</section>
 
- -->             
-<script src="js/ui.js"></script>
-<script>
-(function ($) {
-    $(document).ready(function(){
 
-    /**
-     * This part causes smooth scrolling using scrollto.js
-     * We target all a tags inside the nav, and apply the scrollto.js to it.
-     */
-    $(".pure-menu a").click(function(evn){
-        evn.preventDefault();
-        $('html,body').scrollTo(this.hash, this.hash); 
-    });
+      
 
-    /**
-     * This part handles the highlighting functionality.
-     * We use the scroll functionality again, some array creation and 
-     * manipulation, class adding and class removing, and conditional testing
-     */
-    var aChildren = $(".pure-menu li").children(); // find the a children of the list items
-    var aArray = []; // create the empty aArray
-    for (var i=0; i < aChildren.length; i++) {    
-        var aChild = aChildren[i];
-        var ahref = $(aChild).attr('href');
-        aArray.push(ahref);
-    } // this for loop fills the aArray with attribute href values
+      
 
-    $(window).scroll(function(){
-        var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
-        var windowHeight = $(window).height(); // get the height of the window
-        var docHeight = $(document).height();
+      <!-- /START THE LABMATES -->
 
-        for (var i=0; i < aArray.length; i++) {
-            var theID = aArray[i];
-            var divPos = $(theID).offset().top; // get the offset of the div from the top of page
-            var divHeight = $(theID).height(); // get the height of the div in question
-            if (windowPos >= (divPos-1) && windowPos < (divPos + divHeight + 49)) {
-                $("a[href='" + theID + "']").addClass("pure-menu-selected");
-            } else {
-                $("a[href='" + theID + "']").removeClass("pure-menu-selected");
-            }
-        }
+      
+      <hr class="featurette-divider" id="labmates">
+      <h2 class=text-center >Lab Mates</h2>
+      <hr class="featurette-divider">
 
-        if(windowPos + windowHeight == docHeight) {
-            if (!$("nav li:last-child a").hasClass("pure-menu-selected")) {
-                var navActiveCurrent = $(".pure-menu-selected").attr("href");
-                $("a[href='" + navActiveCurrent + "']").removeClass("pure-menu-selected");
-                $("nav li:last-child a").addClass("pure-menu-selected");
-            }
-        }
-    });
-});
-}(jQuery));
-</script>
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="http://madsesmith.com/images/profile.jpg" alt="Madeline E Smith" width="140" height="140">
+          <h2>Madeline Smith</h2>
+          <p>Madeline is a PhD Candidate in the Technology and Social Behavior joint program in Computer Science and Communication. Her research currently focuses on relational, supportive, and deceptive aspects of social media.</p>
+          <p><a class="btn btn-default" href="http://madsesmith.com" role="button">Visit &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="http://socialmedia.northwestern.edu/files/2014/11/matthewheston.jpeg" alt="Matthew Heston" width="140" height="140">
+          <h2>Matthew Heston</h2>
+          <p>Matthew Heston is a PhD student in the Technology and Social Behavior program. He is interested in social interactions between members of groups and organizations online.</p>
+          <p><a class="btn btn-default" href="http://matthewheston.com/" role="button">Visit &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="http://socialmedia.northwestern.edu/files/2012/09/devito.jpg" alt="Mike DeVito" width="140" height="140">
+          <h2>Mike DeVito</h2>
+          <p>Mike DeVito is a doctoral student in the Media, Technology, and Society program. His research centers around the cognitive effects of new media on human social identity and information flows.</p>
+          <p><a class="btn btn-default" href="http://mikedevito.net/" role="button">Visit &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
-</body>
+
+
+      <!--MAP -->
+      <div class="map" id="contactMap"></div>
+
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2015 Colin Fitzpatrick</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript" src="rubik.js"></script>
+    <script src="bootstrap.js" type="text/javascript"></script>
+    <script src="jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="modernizr.js"></script>
+    <script type="text/javascript" src="rubick_pres.js"></script>
+    <script type="text/javascript" src="presentation-page/jquery.sharrre.js"></script>
+    <script type="text/javascript">
+    	
+
+		var mymap = L.map('contactMap').setView([42.05857, -87.67371], 13);
+
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'mapbox.streets'
+		}).addTo(mymap);
+
+
+		L.marker([42.05857, -87.67371]).addTo(mymap)
+			.bindPopup("<b>Social Media Lab</b>").openPopup();
+
+		var popup = L.popup();
+
+		
+
+	
+    </script>
+    <div class="collapse navbar-collapse" style="min-height: 768px;"><ul class="nav navbar-nav">
+                        <li class="social-links">
+                            <a href="https://www.facebook.com/CreativeTim">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a href="https://twitter.com/CreativeTim">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="https://plus.google.com/+CreativetimPage">
+                                <i class="fa fa-google-plus-square"></i>
+                            </a>
+                            <a href="https://dribbble.com/creativetim">
+                                <i class="fa fa-dribbble"></i>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a data-scroll="true" data-id="#about">
+                            About
+                            </a>
+                        </li>
+                        <li>
+                            <a data-scroll="true" data-id="#projects">
+                            Projects
+                            </a>
+                        </li>
+                        <li>
+                            <a data-scroll="true" data-id="#cv">
+                            CV
+                            </a>
+                        </li>
+                        <li>
+                            <a data-scroll="true" data-id="#labmates">
+                            Lab Mates
+                            </a>
+                        </li>
+                        
+                    </ul></div>
+  </body>
 </html>
-
