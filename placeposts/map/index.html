@@ -1,0 +1,213 @@
+
+
+
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive pricing table.">
+
+    <title>SML Facebook Places Study</title>
+
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="css/layouts/pricing.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+
+    <script type="text/javascript">
+      Parse.initialize("DARsyiXQVFs9DxYxGmHBnTGQolxT6pR6tF18X5eI", "QZQlGnR9JzC8os10L6TiPvHetpviC2yddUQlMTwX");
+
+      var TestObject = Parse.Object.extend("TestObject");
+      var testObject = new TestObject();
+      testObject.save({foo: "bar"}, {
+        success: function(object) {
+          $(".success").show();
+        },
+        error: function(model, error) {
+          $(".error").show();
+        }
+      });
+
+      var Place = Parse.Object.extend("place");
+    </script>
+
+<script type="text/javascript">
+  var Place = Parse.Object.extend("place");
+var query = new Parse.Query(Place);
+query.equalTo("uID", 10100967570642480);
+query.find({
+  success: function(results) {
+    alert("Successfully retrieved " + results.length + " scores.");
+    // Do something with the returned Parse.Object values
+    for (var i = 0; i < results.length; i++) {
+      var object = results[i];
+      alert(object.id + ' - ' + object.get('name'));
+    }
+  },
+  error: function(error) {
+    alert("Error: " + error.code + " " + error.message);
+  }
+});
+
+</script>
+
+
+<script type="text/javascript">
+   function displayInput() {
+            var input = document.getElementById("userID").value;
+            if (input.length === 0) {
+                alert("Please enter a valid input");
+                return;
+            }
+           console.log("you entered " + input);
+        }
+  
+</script>
+
+  </head>
+  <body>
+<script>
+function myFunction() {
+    var userID = document.getElementById("userID");
+    console.log(userID);
+}
+</script>
+
+
+
+
+
+    <div class="pure-menu pure-menu-horizontal">
+
+    </div>
+
+    <div class="banner">
+      <h1 class="banner-head">
+        SML Facebook Place Study
+      </h1>
+    </div>
+
+    <div class="l-content">
+      <div class="pricing-tables pure-g">
+
+        <!-- STEP TWO -->
+        <div class="pure-u-1 pure-u-md-1-3">
+          <div class="pricing-table pricing-table-biz">
+            <div class="pricing-table-header">
+              <span class="pricing-table-price">
+               1<span>Enter Study User ID</span>
+             </span>
+           </div>
+           <div>
+             <form class="pure-form">
+              <input type="text" placeholder="User ID" id="userID">
+              <button type="button" class="pure-button pure-button-primary" onclick="displayInput()">Sign in</button>
+            
+          </form>
+          <span class="price-bottom" id="status"></span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- STEP TWO -->
+    <div class="pure-u-1 pure-u-md-1-3">
+      <div class="pricing-table pricing-table-biz">
+        <div class="pricing-table-header">
+
+
+          <span class="pricing-table-price">
+           2<span>Login to the app</span>
+
+         </span>
+
+       </div>
+       <div>
+        <div class="fb-login-button" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,user_tagged_places" onlogin="checkLoginState();"></div>
+        <span class="price-bottom" id="status"></span>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- STEP THREE -->
+  <div class="pure-u-1 pure-u-md-1-3">
+    <div class="pricing-table pricing-table-biz pricing-table-selected">
+      <div class="pricing-table-header">
+
+        <span class="pricing-table-price">
+         3<span>Submit places</span>
+       </span>
+     </div>
+     <button class="pure-button pure-button-primary button-places" id="sharePlaces">Share Places</button>
+   </div>
+  </div>
+  <!--
+     <div class="pure-u-1 pure-u-md-1-3">
+        <div class="pricing-table pricing-table-biz">
+            <div class="pricing-table-header">
+
+
+                <span class="pricing-table-price">
+                    3 <span>Last Things</span>
+                </span>
+            </div>
+            <button class="button-choose pure-button">Finish</button>
+        </div>
+    </div>
+
+  -->
+  </div>
+  <!-- end pricing-tables -->
+
+  <div class="information pure-g">
+    <div class="pure-u-1 pure-u-md-1-2">
+      <div class="l-box">
+        <h3 class="information-head"></h3>
+        <p>
+        </p>
+      </div>
+    </div>
+
+    <div class="pure-u-1 pure-u-md-1-2">
+      <div class="l-box">
+        <h3 class="information-head"></h3>
+        <p>
+
+        </p>
+      </div>
+    </div>
+
+    <div class="pure-u-1 pure-u-md-1-2">
+      <div class="l-box">
+        <h3 class="information-head"></h3>
+        <p>
+        </p>
+      </div>
+    </div>
+
+    <div class="pure-u-1 pure-u-md-1-2">
+      <div class="l-box">
+        <h3 class="information-head"></h3>
+        <p>
+        </p>
+      </div>
+    </div>
+  </div> <!-- end information -->
+  </div> <!-- end l-content -->
+
+  <div class="footer l-box">
+    <p></p>
+  </div>
+
+
+
+
+  </body>
+  </html>

@@ -108,6 +108,12 @@ body {
   margin: 40px 0; /* Space out the Bootstrap <hr> more */
 }
 
+hr:first-of-type {
+  border-style: none;
+  border-width: 0px;
+  margin: 40px 0;
+}
+
 /* Thin out the marketing headings */
 .featurette-heading {
   font-weight: 300;
@@ -118,6 +124,88 @@ body {
 .map{
   height: 240px;
 }
+
+
+
+/* CV */
+
+li.cv{
+    list-style-type: none;
+}
+
+.hanging-indent{
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    padding-left: 0;
+}
+#layout.active {
+    position: relative;
+    left: 150px;
+}
+#layout.active #menu {
+    left: 150px;
+    width: 150px;
+}
+#layout.active .menu-link {
+    left: 150px;
+}
+/*
+The content `<div>` is where all your content goes.
+*/
+
+li.cv{
+    list-style-type: none;
+}
+
+.hanging-indent{
+    padding-left: 1em;
+    text-indent: -2em;
+}
+
+a.icon{
+    text-decoration: none;
+    color: inherit;
+}
+a.icon:hover{
+    color: #95040B;
+}
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+}
+
+
+.papers {
+    list-style: none;
+}
+
+
+
+
 
 
 /* RESPONSIVE CSS

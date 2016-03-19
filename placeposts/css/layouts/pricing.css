@@ -16,6 +16,10 @@ p {
     line-height: 1.6em;
 }
 
+.pure-form{
+    padding-top: 20px;
+}
+
 
 /*
  * -- Layout Styles --
@@ -170,12 +174,7 @@ p {
  * Styles for the "Choose" button at the bottom of a pricing table.
  * This inherits from Pure Button.
  */
-.button-choose {
-    border: 1px solid #ccc;
-    background: #fff;
-    color: #333;
-    border-radius: 2em;
-    font-weight: bold;
+.button-places {
     position: relative;
     bottom: -1.5em;
 }
