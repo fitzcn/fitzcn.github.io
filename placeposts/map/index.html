@@ -70,9 +70,7 @@ query.find({
       //alert(object.id + ' - ' + object.get('name'));
     }
     displayedLayerGroup.addTo(mymap);
-    displayedLayerGroup.eachLayer(function (layer) {
-            layer.openPopup();
-        });
+    
     mymap.setZoom(mymap.getBoundsZoom(displayedLayerGroup.getBounds()));
 
   },
